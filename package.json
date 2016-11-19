@@ -1,0 +1,51 @@
+{
+  "name": "vscode-typescript-sass-template",
+  "version": "1.0.0",
+  "description": "Typescript & Sass Compiling Environment for Visual Studio Code.",
+  "main": "index.js",
+  "watch": {
+    "build:sass": {
+      "patterns": [
+        "src/sass"
+      ],
+      "extensions": "sass,scss",
+      "quiet": false
+    },
+    "build:ts": {
+      "patterns": [
+        "src/ts"
+      ],
+      "extensions": "ts",
+      "quiet": false
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "node-sass src/sass -o src/css --output-style expanded --source-map true",
+    "build:ts": "tsc -p ./src",
+    "build": "npm run build:sass && npm run build:ts",
+    "watch": "npm-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moomin01/vscode-typescript-sass-template.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Sass",
+    "Scss",
+    "VSCode",
+    "Visual Studio Code"
+  ],
+  "author": "moomin01",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moomin01/vscode-typescript-sass-template/issues"
+  },
+  "homepage": "https://github.com/moomin01/vscode-typescript-sass-template#readme",
+  "devDependencies": {
+    "node-sass": "^3.13.0",
+    "npm-watch": "^0.1.6",
+    "typescript": "^2.0.10"
+  }
+}
